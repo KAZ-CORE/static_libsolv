@@ -66,6 +66,8 @@ cmake \
   -DENABLE_DEBIAN=ON \
   -DENABLE_LZMA_COMPRESSION=ON \
   -DENABLE_ZLIB_COMPRESSION=ON \
+  -DENABLE_COMPLEX_DEPS=ON \
+  -DMULTI_SEMANTICS=ON \
   -DZLIB_LIBRARY="${path_zlib}/libz_${arch_build_target}.a" \
   -DZLIB_INCLUDE_DIR="${path_zlib}/headers" \
   -DLZMA_LIBRARY="${path_liblzma}/liblzma_${arch_build_target}.a" \
@@ -73,7 +75,6 @@ cmake \
   -DCMAKE_POSITION_INDEPENDENT_CODE=OFF \
   -DCMAKE_C_FLAGS="-U HAVE_FUNOPEN" \
   || exit 1
-
 
 cp "${traget_output}/src/solvversion.h" "${headers_output}/solv/" || exit 1
 
